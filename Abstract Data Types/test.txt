@@ -1,0 +1,98 @@
+loading 1M keys ...  ok
+loading 100 keys for insert ... ok
+loading 100 keys for delete ... ok
+loading 100 keys for search ... ok
+
+Btree-disk  128bytes page size 
+
+x=100.000   insert=12.3 delete=2.1  search=12,3
+x=200.000   insert=12.3 delete=2.1  search=12,3
+x=300.000   insert=12.3 delete=2.1  search=12,3
+x=400.000   insert=12.3 delete=2.1  search=12,3
+x=500.000   insert=12.3 delete=2.1  search=12,3
+x=600.000   insert=12.3 delete=2.1  search=12,3
+x=700.000   insert=12.3 delete=2.1  search=12,3
+x=800.000   insert=12.3 delete=2.1  search=12,3
+x=900.000   insert=12.3 delete=2.1  search=12,3
+x=1.000.000   insert=12.3 delete=2.1  search=12,3
+
+
+Btree-disk  256bytes page size 
+
+x=100.000   insert=12.3 delete=2.1  search=12,3
+x=200.000   insert=12.3 delete=2.1  search=12,3
+x=300.000   insert=12.3 delete=2.1  search=12,3
+x=400.000   insert=12.3 delete=2.1  search=12,3
+x=500.000   insert=12.3 delete=2.1  search=12,3
+x=600.000   insert=12.3 delete=2.1  search=12,3
+x=700.000   insert=12.3 delete=2.1  search=12,3
+x=800.000   insert=12.3 delete=2.1  search=12,3
+x=900.000   insert=12.3 delete=2.1  search=12,3
+x=1.000.000   insert=12.3 delete=2.1  search=12,3
+
+
+B+tree-disk  128bytes page size 
+
+x=100.000   insert=12.3 delete=2.1  search=12,3
+x=200.000   insert=12.3 delete=2.1  search=12,3
+x=300.000   insert=12.3 delete=2.1  search=12,3
+x=400.000   insert=12.3 delete=2.1  search=12,3
+x=500.000   insert=12.3 delete=2.1  search=12,3
+x=600.000   insert=12.3 delete=2.1  search=12,3
+x=700.000   insert=12.3 delete=2.1  search=12,3
+x=800.000   insert=12.3 delete=2.1  search=12,3
+x=900.000   insert=12.3 delete=2.1  search=12,3
+x=1.000.000   insert=12.3 delete=2.1  search=12,3
+
+B+tree-disk  256bytes page size 
+
+x=100.000   insert=12.3 delete=2.1  search=12,3
+x=200.000   insert=12.3 delete=2.1  search=12,3
+x=300.000   insert=12.3 delete=2.1  search=12,3
+x=400.000   insert=12.3 delete=2.1  search=12,3
+x=500.000   insert=12.3 delete=2.1  search=12,3
+x=600.000   insert=12.3 delete=2.1  search=12,3
+x=700.000   insert=12.3 delete=2.1  search=12,3
+x=800.000   insert=12.3 delete=2.1  search=12,3
+x=900.000   insert=12.3 delete=2.1  search=12,3
+x=1.000.000   insert=12.3 delete=2.1  search=12,3
+
+
+Btree-mem n=3
+
+x=100.000   insert=12.3 delete=2.1  search=12,3
+x=200.000   insert=12.3 delete=2.1  search=12,3
+x=300.000   insert=12.3 delete=2.1  search=12,3
+x=400.000   insert=12.3 delete=2.1  search=12,3
+x=500.000   insert=12.3 delete=2.1  search=12,3
+x=600.000   insert=12.3 delete=2.1  search=12,3
+x=700.000   insert=12.3 delete=2.1  search=12,3
+x=800.000   insert=12.3 delete=2.1  search=12,3
+x=900.000   insert=12.3 delete=2.1  search=12,3
+x=1.000.000   insert=12.3 delete=2.1  search=12,3
+
+Btree-mem n=64
+
+x=100.000   insert=12.3 delete=2.1  search=12,3
+x=200.000   insert=12.3 delete=2.1  search=12,3
+x=300.000   insert=12.3 delete=2.1  search=12,3
+x=400.000   insert=12.3 delete=2.1  search=12,3
+x=500.000   insert=12.3 delete=2.1  search=12,3
+x=600.000   insert=12.3 delete=2.1  search=12,3
+x=700.000   insert=12.3 delete=2.1  search=12,3
+x=800.000   insert=12.3 delete=2.1  search=12,3
+x=900.000   insert=12.3 delete=2.1  search=12,3
+x=1.000.000   insert=12.3 delete=2.1  search=12,3
+
+AvlTree 
+
+x=100.000   insert=12.3 delete=2.1  search=12,3
+x=200.000   insert=12.3 delete=2.1  search=12,3
+x=300.000   insert=12.3 delete=2.1  search=12,3
+x=400.000   insert=12.3 delete=2.1  search=12,3
+x=500.000   insert=12.3 delete=2.1  search=12,3
+x=600.000   insert=12.3 delete=2.1  search=12,3
+x=700.000   insert=12.3 delete=2.1  search=12,3
+x=800.000   insert=12.3 delete=2.1  search=12,3
+x=900.000   insert=12.3 delete=2.1  search=12,3
+x=1.000.000   insert=12.3 delete=2.1  search=12,3
