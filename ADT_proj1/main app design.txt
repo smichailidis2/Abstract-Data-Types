@@ -1,0 +1,105 @@
+******************** DESIGN ********************
+
+NOTE : ALL DATA STRUCTURES IMPLEMENT ListInterface INTERFACE.
+
+
+----------------
+A1) linked list
+----------------
+is implemented in List class and uses Node class
+
+
+-Class contains a head Node and tail Node (pointers)
+-Each new Node is appended to the end of the list.
+-Search of coordinate pair is done sequentially (Node by Node).
+
+---------------------
+A2) Hash Linked List
+---------------------
+is implemented in HashLinkedList class.
+
+-Inside there is a hash array composed of List Objects (see A1 - linked list). 
+-Each new Node is appended to the [H] index in the hash array (where H is the hash function value of the coordinates).
+-To find a given coordinate , the hash function value [H] is calculated first. This hash value is then used to find the linked list in hash array that contains the coordinates.
+Finally , linked list search is applied.
+
+
+
+==============================================================================================
+NOTE : FOR THE DISC IMPLEMENTATION OF DATA STRUCTURES , THE FOLLOWING DESIGN APPROACH IS USED
+==============================================================================================
+
+Data in the disc are organised in blocks of 256 bytes (Data Blocks).
+One integer (1 int) is equivelant to 4 bytes, in total there are 256/4 = 64 integers in a single data block.
+Since the coordinates (data) are pairs of integers , it would be easier to work with integers instead of bytes.
+'ByteSegment' class handles this issue. It converts byte array to integer array and vise versa (see Picture1 & Picture2).
+Note : the source code for the convertion was found here:
+https://stackoverflow.com/questions/11437203/how-to-convert-a-byte-array-to-an-int-array
+https://stackoverflow.com/questions/1086054/how-to-convert-int-to-byte
+The idea to use integer array instead of byte array was put forward by my father (IT Manager at food industry company).
+
+
+Data blocks on the disc are numbered from 0 to k ( where k is the total number of blocks in the file -1 ).
+
+There is also the class 'DataBlock', that uses 'ByteSegment' class.
+'DataBlock' class devides array of integers into a header structure and data structure (see Picture3 and Picture5).
+
+Header structure contains information about the current and next Data Block ( size : 4 integers ).
+Data structure contains all the coordinates ( size : 60 integers ).
+
+Header is responsible for handling the following:
+a)Current Block Number ( 1 integer ) Valid values: from 0 up to k.
+b)Last index (1 integer , points to the last inserted coordinate). Valid values: integer from 4 up to 63.
+c)Next Block Number (1 integer , points to the number of the next data block). Valid values: integer from 1 up to k , or -1 for the "tail" data block.
+
+Last integer of data block header is unused and always 0 (for data alignment).
+
+'FileDataBlock' class uses RandomAccessFile to read/write/append a 'DataBlock'.
+
+
+Usage of the base classes for disc data structures :
+
+ByteSegment -> DataBlock -> FileDataBlock
+		  |              |
+		  |              |
+                  +--------------+--------------> DiscList class, DiscHashLinkedList class			  
+				                                              ^
+				                                              |
+						HashArray (serialized)--------+
+										  
+
+----------------------
+B1)  Disc Linked List
+----------------------
+is implemented in DiscList class.
+
+Class contains:
+-a head block number and a tail block number
+-a 'FileDataBlock' instance
+
+-Each coordinate is inserted into a 'DataBlock' instance.
+-if there is overflow, new data block is created and appended to the end of the disc list.
+-Search method is sequential ('DataBlock' by 'DataBlock').
+
+See Picture6 - It shows real Disc Linked List.
+
+
+
+
+--------------------------
+B2) Hash Disc Linked List
+--------------------------
+is implemented in DiscHashLinkedList class.
+
+Class contains:
+-A hash array (HashArray class). This is an array of hash items (HashItem class). Each item has 2 fields, a head block number and a tail block number.
+These 2 integers characterize a disc linked list. (See Picture4 : List of 3 Blocks with head block numbers: 0 , 1 , 2 and a new List consisting of a single data block shown in green)
+-a 'FileDataBlock' instance
+-2 consrtructors , one for simple initialization and one for restoring hash array from serialization file.
+In other words there are many lists in a single file, each list is characterised by head block number and tail block number , both stored in hash array serialized file.
+
+
+
+
+
+
